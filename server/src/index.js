@@ -16,23 +16,23 @@ const { googleRouter } = require('./routers/google.router.js');
 const PORT = process.env.PORT || 3005;
 const app = express();
 
-app.use(session({
-  secret: process.env.JWT_ACCESS_SECRET,
-  resave: true,
-  saveUninitialized: true,
-}));
+// app.use(session({
+//   secret: process.env.JWT_ACCESS_SECRET,
+//   resave: true,
+//   saveUninitialized: true,
+// }));
 
-app.use(cors(corsOptions));
-app.use(cookieParser());
-app.use(express.json());
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(cors(corsOptions));
+// app.use(cookieParser());
+// app.use(express.json());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-app.use(authRouter);
-app.use('/user', userRouter);
-app.use('/auth/google', googleRouter);
+// app.use(authRouter);
+// app.use('/user', userRouter);
+// app.use('/auth/google', googleRouter);
 
-app.use(errorMW);
+// app.use(errorMW);
 
 app.use('/', (req, res) => {
   res.send('Server is running...');
