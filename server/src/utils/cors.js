@@ -1,7 +1,7 @@
 'use strict';
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://auth-app-client-vert.vercel.app/',
   methods: 'GET,POST,PATCH',
   credentials: true,
 };
