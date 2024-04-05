@@ -12,5 +12,7 @@ export const googleLogout = () => {
 
 // maybe need to place in components
 export const googleAuth = () => {
-  window.open(`${SERVER_DOMAIN}/auth/google/callback`, '_self');
+  const serverUrl = process.env.SERVER_DOMAIN || SERVER_DOMAIN;
+
+  window.open(`${serverUrl}/auth/google/callback`, '_self');
 };

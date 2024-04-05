@@ -4,7 +4,7 @@ import { refresh } from './authApi';
 import { SERVER_DOMAIN } from '../config';
 
 export function createClient(extraUrl?: string) {
-  const serverUrl = SERVER_DOMAIN;
+  const serverUrl = process.env.SERVER_DOMAIN || SERVER_DOMAIN;
   const result = extraUrl ? serverUrl + extraUrl : serverUrl;
 
   return axios.create({
