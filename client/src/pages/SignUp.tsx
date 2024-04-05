@@ -22,6 +22,7 @@ import { registrRequest } from '../api/authApi';
 import { CircularProgress } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Status } from '../types/Status';
+import { SERVER_DOMAIN } from '../config';
 
 const DEF_SIGNUP_PARAMS = { email: '', name: '', password: '' };
 
@@ -85,10 +86,7 @@ export default function SignUp() {
   };
 
   const googleAuth = () => {
-    const serverUrl = process.env.SERVER_DOMAIN || 'http://localhost:3005';
-
-    window.open(`${serverUrl}/auth/google/callback`, '_self');
-    // window.location.href = `${serverUrl}/auth/google`;
+    window.open(`${SERVER_DOMAIN}/auth/google/callback`, '_self');
   };
 
   return (

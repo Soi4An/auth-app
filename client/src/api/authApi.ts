@@ -9,10 +9,6 @@ export const refresh = () => {
   return authClient.get<ActivateAccountResponse>('/refresh');
 };
 
-// export const checkRefresh = () => {
-//   return authClient.get<{ isValid: boolean }>('/check');
-// };
-
 export const registrRequest = (data: SignUpParams) => {
   return authClient.post('/register', data);
 };

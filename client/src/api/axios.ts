@@ -1,9 +1,10 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
 import { accessTokenService } from '../utils/accessTokenService';
 import { refresh } from './authApi';
+import { SERVER_DOMAIN } from '../config';
 
 export function createClient(extraUrl?: string) {
-  const serverUrl = process.env.SERVER_DOMAIN || 'http://localhost:3005';
+  const serverUrl = SERVER_DOMAIN;
   const result = extraUrl ? serverUrl + extraUrl : serverUrl;
 
   return axios.create({
@@ -13,13 +14,11 @@ export function createClient(extraUrl?: string) {
 }
 
 export const authClient = createClient();
-// authClient.interceptors.response.use(res => res.data);
 
 export const userClient = createClient('/user');
 
 userClient.interceptors.request.use(onRequest);
 userClient.interceptors.response.use(null, onResponseError);
-// httpClient.interceptors.response.use(res => res.data, onResponseError);
 
 function onRequest(request: InternalAxiosRequestConfig) {
   const accessToken = accessTokenService.get();
