@@ -22,7 +22,6 @@ import { registrRequest } from '../api/authApi';
 import { CircularProgress } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Status } from '../types/Status';
-import 'dotenv/config';
 import { googleAuth } from '../api/googleApi';
 
 const DEF_SIGNUP_PARAMS = { email: '', name: '', password: '' };

@@ -26,7 +26,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CircularProgress } from '@mui/material';
 import { Status } from '../types/Status';
 import { LoginMethod } from '../types/LoginMethod';
-import 'dotenv/config';
 import { googleAuth } from '../api/googleApi';
 
 const DEF_LOGIN_PARAMS = {
