@@ -1,7 +1,9 @@
 'use strict';
 
+require('dotenv/config');
+
 const corsOptions = {
-  origin: 'https://auth-app-client-jaj3upaeu-anton-ss-projects-4d75c44a.vercel.app/',
+  origin: process.env.CLIENT_URL,
   methods: 'GET,POST,PATCH',
   credentials: true,
 };

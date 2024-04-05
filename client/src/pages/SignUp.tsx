@@ -23,6 +23,7 @@ import { CircularProgress } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Status } from '../types/Status';
 import 'dotenv/config';
+import { googleAuth } from '../api/googleApi';
 
 const DEF_SIGNUP_PARAMS = { email: '', name: '', password: '' };
 
@@ -83,12 +84,6 @@ export default function SignUp() {
         })
         .catch(() => setStatus(Status.Error));
     }
-  };
-
-  const googleAuth = () => {
-    const serverUrl = process.env.SERVER_DOMAIN;
-
-    window.open(`${serverUrl}/auth/google/callback`, '_self');
   };
 
   return (

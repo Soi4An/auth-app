@@ -1,4 +1,6 @@
 /* eslint-disable max-len */
+export const SERVER_DOMAIN = 'https://auth-app-server-f4rprp1pp-anton-ss-projects-4d75c44a.vercel.app/';
+
 export const ACTIVATION_ACCOUNT_WAY = 'account-activation';
 export const ACTIVATION_PASSWORD_WAY = 'password-activation';
 export const ACTIVATION_EMAIL_WAY = 'email-activation';

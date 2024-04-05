@@ -27,6 +27,7 @@ import { CircularProgress } from '@mui/material';
 import { Status } from '../types/Status';
 import { LoginMethod } from '../types/LoginMethod';
 import 'dotenv/config';
+import { googleAuth } from '../api/googleApi';
 
 const DEF_LOGIN_PARAMS = {
   email: '',
@@ -67,13 +68,6 @@ export default function SignIn() {
         handlerSuccess(res.data);
       })
       .catch(() => setStatus(Status.Error));
-  };
-
-  const googleAuth = () => {
-    const serverUrl = process.env.SERVER_DOMAIN;
-
-    window.open(`${serverUrl}/auth/google/callback`, '_self');
-    // window.location.href = `${serverUrl}/auth/google`;
   };
 
   return (

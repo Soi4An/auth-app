@@ -1,10 +1,10 @@
-import 'dotenv/config';
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
 import { accessTokenService } from '../utils/accessTokenService';
 import { refresh } from './authApi';
+import { SERVER_DOMAIN } from '../config';
 
 export function createClient(extraUrl?: string) {
-  const serverUrl = process.env.SERVER_DOMAIN;
+  const serverUrl = SERVER_DOMAIN;
   const result = extraUrl ? serverUrl + extraUrl : serverUrl;
 
   return axios.create({
