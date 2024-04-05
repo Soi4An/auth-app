@@ -26,7 +26,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CircularProgress } from '@mui/material';
 import { Status } from '../types/Status';
 import { LoginMethod } from '../types/LoginMethod';
-import { SERVER_DOMAIN } from '../config';
+import 'dotenv/config';
 
 const DEF_LOGIN_PARAMS = {
   email: '',
@@ -70,7 +70,9 @@ export default function SignIn() {
   };
 
   const googleAuth = () => {
-    window.open(`${SERVER_DOMAIN}/auth/google/callback`, '_self');
+    const serverUrl = process.env.SERVER_DOMAIN;
+
+    window.open(`${serverUrl}/auth/google/callback`, '_self');
     // window.location.href = `${serverUrl}/auth/google`;
   };
 

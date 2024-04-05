@@ -22,7 +22,7 @@ import { registrRequest } from '../api/authApi';
 import { CircularProgress } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Status } from '../types/Status';
-import { SERVER_DOMAIN } from '../config';
+import 'dotenv/config';
 
 const DEF_SIGNUP_PARAMS = { email: '', name: '', password: '' };
 
@@ -86,7 +86,9 @@ export default function SignUp() {
   };
 
   const googleAuth = () => {
-    window.open(`${SERVER_DOMAIN}/auth/google/callback`, '_self');
+    const serverUrl = process.env.SERVER_DOMAIN;
+
+    window.open(`${serverUrl}/auth/google/callback`, '_self');
   };
 
   return (
