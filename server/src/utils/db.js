@@ -3,7 +3,6 @@
 require('dotenv/config');
 
 const pg = require('pg');
-
 const { Sequelize } = require('sequelize');
 
 // const db = new Sequelize(process.env.POSTGRES_URL);
@@ -14,7 +13,7 @@ const { Sequelize } = require('sequelize');
 //   logging: false,
 // });
 
-const db = new Sequelize(process.env.POSTGRES_UR, {
+const db = new Sequelize(process.env.POSTGRES_URL, {
   dialect: 'postgres',
   dialectModule: pg,
   logging: false,
